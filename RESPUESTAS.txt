@@ -1,0 +1,45 @@
+GRADO EN INGENIERÍA INFORMÁTICA
+LENGUAJES Y PARADIGMAS DE LA PROGRAMACIÓN
+PRACTICA Nº5 VIRTUAL - PRUEBAS UNITARIAS
+WALDO NAZCO TORRES
+
+-----------------------------------------------------------------------
+
+1) Clone el siguiente repositorio de 'github' y siga las instrucciones que se indican en el fichero 'README.md':
+
+git@github.com:coromoto/PruebasUnitarias.git
+
+2) En esta tarea escriba la respuesta a las siguientes preguntas:
+
+   2.1.) ¿Cuál es el error en el código del método para calcular el máximo común divisor?
+
+def gcd(u, v)
+  u, v = u.abs, v.abs
+  while v == 0 -----------> En esta condición se encuentra el error
+    u, v = v, u % v
+  end
+  u
+end
+
+puts gcd(6,3)
+
+La condición es erronea ya que intenta dividir un numero por un denominador cuyo valor es 0, esto falla ya que ningún número es divisible por 0, por lo tanto la condición correcta sería "while v != 0".
+
+El código final quedaría así:
+
+def gcd(u, v)
+  u, v = u.abs, v.abs
+  while v != 0
+    u, v = v, u % v
+  end
+  u
+end
+
+puts gcd(6,3)
+
+
+   2.2.) ¿Qué comandos del depurador utilizó para detectarlo? Describa la sesión de depuración.
+
+
+
+   2.3.) Escriba la dirección 'HTTP' del repositorio que contiene el desarrollo de su práctica.

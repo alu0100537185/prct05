@@ -1,9 +1,6 @@
-desc "build HTML from README.md"
-task :html do
-  sh "kramdown README.md  > README.html"
-end
+task :default => :test
 
-desc "install gems"
-task :install do
-  sh "bundle install"
+desc "Test Class Racional"
+task :test do
+  sh "ruby -Ilib -Itest tc_racional.rb"
 end
